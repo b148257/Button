@@ -12,3 +12,8 @@ Button组件主要接受六个props。
 
     text:         String    可选，按钮上的文字
 
+项目使用了create-react-app脚手架，可以直接使用
+
+    npm start 或者  yarn start
+    npm test 或者 yarn test
+
