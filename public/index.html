@@ -5,6 +5,7 @@
     <title>前端面试</title>
     <style>
       #button{
+        display: inline-block;
         margin: 15px;
       }
     </style>
@@ -17,7 +18,9 @@
       点击按钮后获取数据
     </p>
     <label for="url">url：</label>
-    <input name="url" id="url" type="url" />
+    <input name="url" id="url" type="url" placeholder="url" />
+    <label for="method">Method</label>
+    <input id="method" type="text" placeholder="method"/>
     <div id="button"></div>
     <div id="result">
       <h3>获取结果:</h3>

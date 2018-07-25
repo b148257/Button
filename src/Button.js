@@ -23,6 +23,10 @@ class Button extends Component {
         };
     }
 
+    componentDidCatch(error, errorInfo){
+        console.log(error, errorInfo);
+    }
+
     componentDidMout() {
         //设置button宽度以防止按钮中文本变为‘发送中’的时候按钮宽度变化
         const {button} = this.refs;
@@ -40,16 +44,20 @@ class Button extends Component {
         let onGetData = props.onGetData;
 
         if (typeof method !== 'string' || !this.validateMethod(method)) {
-            throw new Error('Prop method need to be string and value should be GET or POST');
+            onGetData( new Error('Prop method need to be string and value should be GET or POST'));
+            return;
         }
         if (!url || typeof url !== 'string') {
-            throw new Error('Prop url is required and should be string');
+            onGetData( new Error('Prop url is required and should be string'));
+            return;
         }
         if (typeof onGetData !== 'function') {
-            throw new Error('Prop onGetData should be function');
+            onGetData( new Error('Prop onGetData should be function'));
+            return;
         }
         if(data && typeof data !== 'object'  ){
-            throw new Error('Prop data should be obj');
+            onGetData( new Error('Prop data should be obj'));
+            return;
         }
 
         this.toggleDisabled();
