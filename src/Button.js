@@ -2,11 +2,8 @@ import React, {Component} from 'react';
 import './Button.css';
 import PropTypes from 'prop-types';
 
-const style = {
 
-}
-
-/*  Button组件接受三个props
+/*  Button组件接受六个props
     url:      String   必须，要获取数据的url
     method：  String   可选，可以是GET和POST，默认是'GET'
     data:     Object   可选，要发送的数据
@@ -98,7 +95,7 @@ class Button extends Component {
             url += '&';
         }
         let keys = Object.keys(data);
-        keys.map((key, idx) => {
+        keys.forEach((key, idx) => {
             url += decodeURIComponent(key) + '=' + decodeURIComponent(data[key]);
             if(idx !== keys.length - 1){
                 url += '&';
@@ -137,7 +134,7 @@ class Button extends Component {
                         resolve(xhr.responseText);
                         console.log(xhr.responseText)
                     } else {
-                        reject('error', xhr.status);
+                        reject(new Error(xhr.statusText));
                     }
                 }
             };
