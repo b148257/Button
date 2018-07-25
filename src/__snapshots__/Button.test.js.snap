@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button render size test 1`] = `
+<div>
+  <button
+    className="c-button small"
+    disabled={false}
+    onClick={[Function]}
+  >
+    发送
+  </button>
+  <button
+    className="c-button middle"
+    disabled={false}
+    onClick={[Function]}
+  >
+    发送
+  </button>
+  <button
+    className="c-button big"
+    disabled={false}
+    onClick={[Function]}
+  >
+    发送
+  </button>
+</div>
+`;
+
+exports[`Button render text test 1`] = `
+<div>
+  <button
+    className="c-button big"
+    disabled={false}
+    onClick={[Function]}
+  >
+    发送文件到123
+  </button>
+</div>
+`;
